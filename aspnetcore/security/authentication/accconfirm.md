@@ -73,7 +73,9 @@ services.Configure<MvcOptions>(options =>
 });
 ```
 
-Add the `[RequireHttps]` attribute to each controller. The `[RequireHttps]` attribute will redirect all HTTP GET requests to HTTPS GET and will reject all HTTP POSTs. A security best practice is to use HTTPS for all requests.
+> [!Note]
+> If you get an error for `[services.Configure<MvcOptions>]` You can resolve this by adding the `[using Microsoft.AspNetCore.Mvc;]`  namespace.
+
 
 [!code-csharp[Main](accconfirm/sample/WebApplication3/src/WebApplication3/Controllers/HomeController.cs?range=9-10&highlight=1)]
 
